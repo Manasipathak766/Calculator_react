@@ -10,8 +10,8 @@ function App() {
   const [total, setTotal] = useState(false);
 
   const inputNum = (e) => {
-    if (curState.includes(".") && e.target.innerText === ".") return;  //This code is likely used to prevent the user from entering more 
-                                                                //than one decimal point in a single number.                                                              
+    if (curState.includes(".") && e.target.innerText === ".") return; //This code is likely used to prevent the user from entering more
+    //than one decimal point in a single number.
     if (total) {
       setPreState("");
     }
@@ -22,16 +22,18 @@ function App() {
     setTotal(false);
   };
 
-  useEffect(() => {                   //using the useEffect hook in React to update the value of an input element whenever the curState variable changes.
-    setInput(curState);               //useEffect is a hook in React that allows you to perform side effects, such as updating the
-                                      // DOM or fetching data, after a component renders.
+  useEffect(() => {
+    //using the useEffect hook in React to update the value of an input element whenever the curState variable changes.
+    setInput(curState); //useEffect is a hook in React that allows you to perform side effects, such as updating the
+    // DOM or fetching data, after a component renders.
   }, [curState]);
 
-  useEffect(() => {                   //using the useEffect hook from React to set the initial state of a calculator's input display 
-                                      //to "0" when the component mounts.
+  useEffect(() => {
+    //using the useEffect hook from React to set the initial state of a calculator's input display
+    //to "0" when the component mounts.
     setInput("0");
   }, []);
-  
+
   const operatorType = (e) => {
     setTotal(false);
     setOperator(e.target.innerText);
@@ -46,11 +48,11 @@ function App() {
 
   const equals = (e) => {
     if (e?.target.innerText === "=") {
-      //The ?. is called the optional chaining operator, which allows you to access nested properties of an object without 
+      setTotal(true);
+      //The ?. is called the optional chaining operator, which allows you to access nested properties of an object without
       //causing an error if one of the nested properties is null or undefined. In this case, the ?. is used to check whether
       // the target property of the e object is null or undefined. If it is, then the expression will return undefined and the
       // comparison will fail.
-      setTotal(true);
     }
     let cal;
     switch (operator) {
