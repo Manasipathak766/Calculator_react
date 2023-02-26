@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { NumericFormat } from "react-number-format";
 
+
 function App() {
   const [preState, setPreState] = useState("");
   const [curState, setCurState] = useState("");
@@ -97,6 +98,8 @@ function App() {
     setInput("0");
   };
   return (
+    <div>
+    
     <div className="container">
       <div className="wrapper">
         <div className="screen">
@@ -172,6 +175,7 @@ function App() {
           =
         </div>
       </div>
+    </div>
     </div>
   );
 }
