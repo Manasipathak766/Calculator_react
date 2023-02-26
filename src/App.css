@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* this below will make the dragging unusable by the user on the numbers */
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: none;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: burlywood;
+  display: grid; 
+  place-content: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  height: 100vh;
+  font-size: 1.5rem;
+  font-weight: 300;
+} 
+/* Below is used to make the black center box */
+ .container{
+  height: 80vh;
+  width: 50vh;
+  background-color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+   box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+} 
+
+.wrapper{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  /* this below gives the grid form of the numbers in calculator */
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(6,1fr); 
+  gap: 10px;
+} 
+/* this below is correcting the size of the screen or all the buttons together. */
+.screen{
+  grid-column: 1 / -1;
+  color: white;
+  text-align: right;
+  padding: 0.5rem;
+  font-size: 4rem;
+  overflow: hidden;
+} 
+
+/* this below is making the background of the buttons in the calci */
+.btn{
+  display: grid;
+  place-content: center;
+  background-color: rgb(54, 52, 52);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn:hover{
+  background-color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light-gray {
+  background-color: gray;
+  color: black
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.light-gray:hover{
+  background-color: blue;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.orange:hover{
+  background-color: blue;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* below is to make the zero button wide */
+.zero{
+  grid-column: 1 / span 2;
+  border-radius: 25px;
+  place-content: unset;
+  align-items: center;
+  padding-left: 2rem;
 }
