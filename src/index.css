@@ -11,5 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* transition */
+body {
+
+  background: linear-gradient(51deg, #6ddf12, #067f3b, #00d58c, #009bd5, #0021d5, #8800d5, #f316d8, #f3164f, #f3be16, #bdf316);
+  background-size: 2000% 2000%;
+
+  -webkit-animation: mytransition 19s ease infinite;
+  -moz-animation: mytransition 19s ease infinite;
+  animation: mytransition 19s ease infinite;
+}
+
+@-webkit-keyframes mytransition {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+@-moz-keyframes mytransition {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+@keyframes mytransition {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
 
 
